@@ -1,0 +1,7 @@
+{
+  "name": "Humanbound CI (Python)",
+  "description": "Lint (ruff), test matrix (Python 3.10/3.11/3.12), and build (wheel + sdist) — the standard Humanbound CI for Python packages.",
+  "iconName": "octicon python",
+  "categories": ["Python"],
+  "filePatterns": ["pyproject.toml$", "setup.cfg$", "setup.py$"]
+}

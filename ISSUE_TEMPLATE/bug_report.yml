@@ -1,0 +1,65 @@
+name: Bug report
+description: Something is broken or unexpected
+title: "bug: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a bug. **Security issues must not be reported here** —
+        see the repository's `SECURITY.md` for the private disclosure channel.
+
+  - type: input
+    id: version
+    attributes:
+      label: Project version
+      description: Version of the project where you encountered the bug. For Python packages, `pip show <pkg> | grep Version`.
+      placeholder: "e.g. 2.0.3 / 0.2.1 / humanbound-test 0.1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      description: Operating system + relevant runtime version (Python, Node, Cursor, Claude Code, etc.)
+      placeholder: "macOS 14.5 · Python 3.12.3 / Cursor 2.5 / Claude Code 0.x"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Which surface is affected?
+      options:
+        - CLI
+        - Python SDK
+        - Plugin (Claude Code)
+        - Plugin (Cursor)
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and what you expected instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: Exact command, minimal code snippet, or step-by-step.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or traceback
+      render: shell

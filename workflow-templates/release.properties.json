@@ -1,0 +1,7 @@
+{
+  "name": "Humanbound Release",
+  "description": "Tag-driven release: builds Python distributions (when pyproject.toml is present), publishes to PyPI via Trusted Publishing, and creates a GitHub Release with notes extracted from CHANGELOG.md. Supports `vX.Y.Z` and `v-<pkg>-<version>` tag patterns.",
+  "iconName": "octicon rocket",
+  "categories": ["Deployment", "Python"],
+  "filePatterns": ["CHANGELOG.md$"]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Humanbound CI (Shell + JSON)",
+  "description": "ShellCheck across all bash scripts, JSON manifest validation, and bats smoke tests — the standard Humanbound CI for plugin / shell-heavy repos.",
+  "iconName": "octicon terminal",
+  "categories": ["Code quality"],
+  "filePatterns": [".*\\.sh$", ".*plugin\\.json$"]
+}

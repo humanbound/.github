@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  shellcheck:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install shellcheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - name: Run shellcheck on all shell scripts
+        run: |
+          find . -type f -name '*.sh' -not -path './.git/*' -print0 \
+            | xargs -0 shellcheck -x
+
+  manifest-validate:
+    name: Validate JSON manifests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Validate every .json file parses
+        run: |
+          python - <<'PY'
+          import json, sys, pathlib
+          errors = []
+          for p in pathlib.Path(".").rglob("*.json"):
+              if ".git" in p.parts:
+                  continue
+              try:
+                  json.loads(p.read_text())
+              except Exception as e:
+                  errors.append(f"{p}: {e}")
+          if errors:
+              print("\n".join(errors))
+              sys.exit(1)
+          print("All JSON manifests valid.")
+          PY
+
+  bats:
+    name: Bats smoke tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install bats
+        run: sudo apt-get update && sudo apt-get install -y bats
+      - name: Run bats suites
+        run: |
+          # Discover and run every tests/bash directory in the repo.
+          mapfile -t suites < <(find . -type d -name bash -path '*/tests/*' -not -path './.git/*')
+          if [ "${#suites[@]}" -eq 0 ]; then
+            echo "no bats suites found — skipping"
+            exit 0
+          fi
+          for suite in "${suites[@]}"; do
+            echo "→ $suite"
+            bats "$suite"
+          done
