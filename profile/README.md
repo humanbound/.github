@@ -67,19 +67,4 @@ loop, release process, and DCO sign-off requirement (see [DCO.md](https://github
 - 🔒 [Report a security issue](https://github.com/humanbound/humanbound/blob/main/SECURITY.md) — **not via public Issues**
 - 💬 [Join Discord](https://discord.gg/WgTMpmSFtN)
 
-## Telemetry
 
-The `hb` CLI sends anonymous usage data to help us improve it.
-Disable with `hb telemetry disable`, `HB_TELEMETRY_DISABLED=1`, or
-`DO_NOT_TRACK=1`. Turning telemetry off sends one final anonymous
-`telemetry_disabled` event (once per machine, ever) so we can count
-opt-outs. Full disclosure: [PRIVACY.md](https://github.com/humanbound/humanbound/blob/main/PRIVACY.md).
-
-## License
-
-[Apache-2.0](https://github.com/humanbound/humanbound/blob/main/LICENSE). Free to use in any context — commercial or
-open-source — with attribution. See [TRADEMARK.md](https://github.com/humanbound/humanbound/blob/main/TRADEMARK.md) for the
-trademark policy. The code is open; the name is not.
-
-The sibling project [`humanbound-firewall`](https://github.com/humanbound/humanbound-firewall)
-is also Apache-2.0 — same license, different product.
