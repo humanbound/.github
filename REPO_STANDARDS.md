@@ -33,7 +33,7 @@ A reader landing on any Humanbound repo should recognise the layout instantly.
 | A3 | Badge row: CI status, license, Discord, Documentation. Python packages add PyPI version, supported Python versions, and downloads | Shields.io badges with `style=flat-square&color=FD9506` |
 | A4 | A `> 📖` markdown blockquote after the badges, pointing at the relevant area of `docs.humanbound.ai` | Single blockquote line |
 | A5 | A copy-pastable Quick Start within the first 100 lines | Fenced shell block with the canonical install command |
-| A6 | Contributing footer block with four bullets: 🐛 bug, 💡 feature, 🔒 security, 💬 Discord | Anchors to `issues/new/choose`, `SECURITY.md`, `discord.gg/gQyXjVBF` |
+| A6 | Contributing footer block with four bullets: 🐛 bug, 💡 feature, 🔒 security, 💬 Discord | Anchors to `issues/new/choose`, `SECURITY.md`, `discord.gg/QFTD6tr9zu` |
 | A7 | License footer naming the licence AND linking the other public Humanbound repos by name | `[Apache-2.0](./LICENSE)` plus inline links to sibling repo URLs |
 
 ---
@@ -100,7 +100,7 @@ Repos cross-link so readers can find related projects.
 | E1 | The README's License section names the **other** public Humanbound repos by name and links them | README footer |
 | E2 | The README points at `docs.humanbound.ai` in three places: the badge row, the docs callout, and the relevant sub-area path | README |
 | E3 | Brand assets live at the same path in every repo: `assets/logo-light.svg` and `assets/logo-dark.svg` | Filesystem |
-| E4 | Discord invite is `discord.gg/gQyXjVBF` everywhere. One source of truth | grep `discord.gg/` |
+| E4 | Discord invite is `discord.gg/QFTD6tr9zu` everywhere. One source of truth | grep `discord.gg/` |
 | E5 | When a package interoperates with a sibling (e.g. `pip install humanbound[firewall]`), the README has a "Using with X" section that names and links the sibling | README |
 
 ---
