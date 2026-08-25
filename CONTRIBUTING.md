@@ -83,7 +83,7 @@ Versioning follows [Semantic Versioning](https://semver.org).
 
 ## Community
 
-- **Discord** — [discord.gg/gQyXjVBF](https://discord.gg/gQyXjVBF) for
+- **Discord** — [discord.gg/QFTD6tr9zu](https://discord.gg/QFTD6tr9zu) for
   questions and discussion
 - **GitHub Discussions** — on each repo, for longer-form topics
 - **Documentation** — [docs.humanbound.ai](https://docs.humanbound.ai)
